@@ -1,0 +1,24 @@
+set_app_var mv_continue_on_opcond_mismatch true
+source ../custom_scripts/to_create_scenarios.tcl
+source ../custom_scripts/set_tlu.tcl
+source ../custom_scripts/add_keepouts_near_macros.tcl
+
+source ../custom_scripts/cut_rows_near_macro.tcl
+
+change_selection [get_nets {VDD VSS} -all]
+
+gui_set_pref_value -category {layout} -key {editingEnableSnapping} -value {false}
+
+gui_add_missing_vias [get_selection]
+
+gui_set_pref_value -category {layout} -key {editingEnableSnapping} -value {true}
+
+change_selection {}
+
+source ../custom_scripts/derive_pg_connection.tcl
+
+remove_buffer_tree -all
+
+set placer_max_cell_density_threshold 0.6
+
+place_opt -area_recovery -congestion -continue_on_missing_scandef 

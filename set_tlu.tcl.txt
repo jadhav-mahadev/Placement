@@ -1,0 +1,30 @@
+set DESIGN_NAME                   "ORCA_TOP"  ;#  The name of the top-level design
+
+# 
+set WORKSHOP_REF_PATH             "/project/IC_Compiler_SoC_DP_2016.03-SP4/ref"
+set ICC_INPUTS_PATH               "${WORKSHOP_REF_PATH}/design_data"
+set LIBRARY_TOP_PATH              "${WORKSHOP_REF_PATH}/SAED32_2012-12-25"
+
+set DESIGN_REF_PATH               "${LIBRARY_TOP_PATH}/lib"
+set DESIGN_REF_TECH_PATH          "${LIBRARY_TOP_PATH}/tech"
+
+set DESIGN_NAME                   "ORCA_TOP"  ;#  The name of the top-level design
+
+# 
+set WORKSHOP_REF_PATH             "/project/IC_Compiler_SoC_DP_2016.03-SP4/ref"
+set ICC_INPUTS_PATH               "${WORKSHOP_REF_PATH}/design_data"
+set LIBRARY_TOP_PATH              "${WORKSHOP_REF_PATH}/SAED32_2012-12-25"
+
+set DESIGN_REF_PATH               "${LIBRARY_TOP_PATH}/lib"
+set DESIGN_REF_TECH_PATH          "${LIBRARY_TOP_PATH}/tech"
+
+
+set TECH_FILE                     "${DESIGN_REF_TECH_PATH}/milkyway/saed32nm_1p9m_mw.tf"  ;#  Milkyway technology file
+set MAP_FILE                      "${DESIGN_REF_TECH_PATH}/star_rc/saed32nm_tf_itf_tluplus.map"  ;#  Mapping file for TLUplus
+set TLUPLUS_MAX_FILE              "${DESIGN_REF_TECH_PATH}/star_rc/saed32nm_1p9m_Cmax.tluplus"  ;#  Max TLUplus file
+set TLUPLUS_MIN_FILE              "${DESIGN_REF_TECH_PATH}/star_rc/saed32nm_1p9m_Cmin.tluplus"  ;#  Min TLUplus file
+
+
+set_tlu_plus_files -max_tluplus $TLUPLUS_MAX_FILE \
+ -min_tluplus $TLUPLUS_MIN_FILE \
+ -tech2itf_map $MAP_FILE 

@@ -1,0 +1,299 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : ORCA_TOP
+Scenario(s): test_worst
+Version: H-2013.03-ICC-SP4
+Date   : Tue Aug 28 18:45:29 2018
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+  Startpoint: snps_OCC_controller/U_clk_control_i_3/pipeline_or_tree_l_reg
+              (rising edge-triggered flip-flop clocked by PCI_CLK)
+  Endpoint: snps_OCC_controller/U_clk_control_i_3/fast_clk_enable_l_reg
+            (falling edge-triggered flip-flop clocked by PCI_CLK)
+  Scenario: test_worst
+  Path Group: PCI_CLK
+  Path Type: max
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock PCI_CLK (rise edge)                               0.00       0.00      
+  clock network delay (ideal)                             0.00       0.00      
+  snps_OCC_controller/U_clk_control_i_3/pipeline_or_tree_l_reg/CLK (DFFARX1_HVT)
+                                                          0.00       0.00 r    0.75
+  snps_OCC_controller/U_clk_control_i_3/pipeline_or_tree_l_reg/Q (DFFARX1_HVT)
+                                                          1.25       1.25 f    0.75
+  snps_OCC_controller/U_clk_control_i_3/U5/Y (AND3X1_HVT)
+                                                          0.55 *     1.79 f    0.75
+  snps_OCC_controller/U_clk_control_i_3/fast_clk_enable_l_reg/D (DFFNARX1_HVT)
+                                                          0.00 *     1.79 f    0.75
+  data arrival time                                                  1.79      
+
+  clock PCI_CLK (fall edge)                               3.75       3.75      
+  clock network delay (ideal)                             0.00       3.75      
+  clock uncertainty                                      -0.10       3.65      
+  snps_OCC_controller/U_clk_control_i_3/fast_clk_enable_l_reg/CLK (DFFNARX1_HVT)
+                                                          0.00       3.65 f    
+  library setup time                                     -0.72       2.93      
+  data required time                                                 2.93      
+  ------------------------------------------------------------------------------------
+  data required time                                                 2.93      
+  data arrival time                                                 -1.79      
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                        1.13      
+
+
+  Startpoint: snps_OCC_controller/U_clk_control_i_2/U_cycle_ctr_i/count_int_reg[1]
+              (rising edge-triggered flip-flop clocked by SDRAM_CLK)
+  Endpoint: snps_OCC_controller/U_clk_control_i_2/pipeline_or_tree_l_reg
+            (rising edge-triggered flip-flop clocked by SDRAM_CLK)
+  Scenario: test_worst
+  Path Group: SDRAM_CLK
+  Path Type: max
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock SDRAM_CLK (rise edge)                             0.00       0.00      
+  clock network delay (ideal)                             0.00       0.00      
+  snps_OCC_controller/U_clk_control_i_2/U_cycle_ctr_i/count_int_reg[1]/CLK (DFFARX1_HVT)
+                                                          0.00       0.00 r    0.75
+  snps_OCC_controller/U_clk_control_i_2/U_cycle_ctr_i/count_int_reg[1]/Q (DFFARX1_HVT)
+                                                          1.45       1.45 r    0.75
+  snps_OCC_controller/U_clk_control_i_2/U_cycle_ctr_i/count[1] (ORCA_TOP_DFT_cntr_scnto_width2_count_to3_rst_mode0_dcod_mode0_0_2)
+                                                          0.00       1.45 r    
+  snps_OCC_controller/U_clk_control_i_2/U_decode_i/A[1] (ORCA_TOP_DFT_decode_width2_0_2)
+                                                          0.00       1.45 r    
+  snps_OCC_controller/U_clk_control_i_2/U_decode_i/U8/Y (INVX1_HVT)
+                                                          0.22 *     1.66 f    0.75
+  snps_OCC_controller/U_clk_control_i_2/U_decode_i/U4/Y (AND2X1_HVT)
+                                                          0.35 *     2.01 f    0.75
+  snps_OCC_controller/U_clk_control_i_2/U_decode_i/B[1] (ORCA_TOP_DFT_decode_width2_0_2)
+                                                          0.00       2.01 f    
+  snps_OCC_controller/U_clk_control_i_2/U4/Y (AND2X1_HVT)
+                                                          0.35 *     2.36 f    0.75
+  snps_OCC_controller/U_clk_control_i_2/U_or_tree_i/a[0] (ORCA_TOP_DFT_or_gate_width2_0_2)
+                                                          0.00       2.36 f    
+  snps_OCC_controller/U_clk_control_i_2/U_or_tree_i/U1/Y (OR2X1_HVT)
+                                                          0.49 *     2.85 f    0.75
+  snps_OCC_controller/U_clk_control_i_2/U_or_tree_i/b (ORCA_TOP_DFT_or_gate_width2_0_2)
+                                                          0.00       2.85 f    
+  snps_OCC_controller/U_clk_control_i_2/pipeline_or_tree_l_reg/D (DFFARX1_HVT)
+                                                          0.00 *     2.85 f    0.75
+  data arrival time                                                  2.85      
+
+  clock SDRAM_CLK (rise edge)                             3.75       3.75      
+  clock network delay (ideal)                             0.00       3.75      
+  clock uncertainty                                      -0.10       3.65      
+  snps_OCC_controller/U_clk_control_i_2/pipeline_or_tree_l_reg/CLK (DFFARX1_HVT)
+                                                          0.00       3.65 r    
+  library setup time                                     -0.57       3.08      
+  data required time                                                 3.08      
+  ------------------------------------------------------------------------------------
+  data required time                                                 3.08      
+  data arrival time                                                 -2.85      
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                        0.23      
+
+
+  Startpoint: sdram_clk (clock source 'SDRAM_CLK')
+  Endpoint: sd_DQ_out[17]
+            (output port clocked by SD_DDR_CLK)
+  Scenario: test_worst
+  Path Group: SD_DDR_CLK
+  Path Type: max
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock SDRAM_CLK (rise edge)                             0.00       0.00      
+  sdram_clk (in)                                          0.00       0.00 r    
+  io_buff_202_0/Y (NBUFFX4_HVT)                           0.22 *     0.22 r    0.75
+  I_CLOCKING/sdram_clk_in (CLOCKING)                      0.00       0.22 r    
+  I_CLOCKING/I_CLK_SOURCE_SDRAM_CLK/Y (NBUFFX16_LVT)      0.16 *     0.39 r    0.75
+  I_CLOCKING/sdram_clk (CLOCKING)                         0.00       0.39 r    
+  snps_OCC_controller/fast_clk[2] (ORCA_TOP_DFT_clk_mux_0)
+                                                          0.00       0.39 r    
+  snps_OCC_controller/U27/Y (AOI22X2_LVT)                 0.19 *     0.57 f    0.75
+  snps_OCC_controller/U3/Y (INVX16_LVT)                   0.07 *     0.64 r    0.75
+  snps_OCC_controller/clk[2] (ORCA_TOP_DFT_clk_mux_0)     0.00       0.64 r    
+  I_SDRAM_TOP/sdram_clk (SDRAM_TOP)                       0.00       0.64 r    
+  I_SDRAM_TOP/U250/Y (INVX32_LVT)                         0.04 *     0.69 f    0.75
+  I_SDRAM_TOP/U311/Y (INVX32_LVT)                         0.11 *     0.79 r    0.75
+  I_SDRAM_TOP/I_SDRAM_IF/sdram_clk (SDRAM_IF)             0.00       0.79 r    
+  I_SDRAM_TOP/I_SDRAM_IF/sd_mux_dq_out_17/Y (MUX21X2_LVT)
+                                                          0.29 *     1.08 f    0.75
+  I_SDRAM_TOP/I_SDRAM_IF/sd_DQ_out[17] (SDRAM_IF)         0.00       1.08 f    
+  I_SDRAM_TOP/sd_DQ_out[17] (SDRAM_TOP)                   0.00       1.08 f    
+  io_buff_93_0/Y (NBUFFX4_HVT)                            0.00       1.08 f    0.75
+  sd_DQ_out[17] (out)                                     0.00       1.08 f    
+  data arrival time                                                  1.08      
+
+  clock SD_DDR_CLK (fall edge)                            1.88       1.88      
+  clock network delay (ideal)                             0.00       1.88      
+  output external delay                                  -0.65       1.23      
+  data required time                                                 1.23      
+  ------------------------------------------------------------------------------------
+  data required time                                                 1.23      
+  data arrival time                                                 -1.08      
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                        0.15      
+
+
+  Startpoint: snps_OCC_controller/U_clk_control_i_0/pipeline_or_tree_l_reg
+              (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Endpoint: snps_OCC_controller/U_clk_control_i_0/fast_clk_enable_l_reg
+            (falling edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Scenario: test_worst
+  Path Group: SYS_2x_CLK
+  Path Type: max
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock SYS_2x_CLK (rise edge)                            0.00       0.00      
+  clock network delay (ideal)                             0.00       0.00      
+  snps_OCC_controller/U_clk_control_i_0/pipeline_or_tree_l_reg/CLK (DFFARX1_LVT)
+                                                          0.00       0.00 r    0.75
+  snps_OCC_controller/U_clk_control_i_0/pipeline_or_tree_l_reg/Q (DFFARX1_LVT)
+                                                          0.27       0.27 f    0.75
+  snps_OCC_controller/U_clk_control_i_0/U5/Y (AND3X1_LVT)
+                                                          0.12 *     0.38 f    0.75
+  snps_OCC_controller/U_clk_control_i_0/fast_clk_enable_l_reg/D (DFFNARX1_HVT)
+                                                          0.00 *     0.38 f    0.75
+  data arrival time                                                  0.38      
+
+  clock SYS_2x_CLK (fall edge)                            1.20       1.20      
+  clock network delay (ideal)                             0.00       1.20      
+  clock uncertainty                                      -0.10       1.10      
+  snps_OCC_controller/U_clk_control_i_0/fast_clk_enable_l_reg/CLK (DFFNARX1_HVT)
+                                                          0.00       1.10 f    
+  library setup time                                     -0.61       0.49      
+  data required time                                                 0.49      
+  ------------------------------------------------------------------------------------
+  data required time                                                 0.49      
+  data arrival time                                                 -0.38      
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                        0.11      
+
+
+  Startpoint: I_BLENDER_0/R_732
+              (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: I_BLENDER_0/s4_op2_reg[26]
+            (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Scenario: test_worst
+  Path Group: SYS_CLK
+  Path Type: max
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                               0.00       0.00      
+  clock network delay (ideal)                             0.00       0.00      
+  I_BLENDER_0/R_732/CLK (SDFFX1_LVT)                      0.00       0.00 r    0.75
+  I_BLENDER_0/R_732/Q (SDFFX1_LVT)                        0.34       0.34 r    0.75
+  I_BLENDER_0/U1006/Y (OR2X2_LVT)                         0.09 *     0.43 r    0.75
+  I_BLENDER_0/U3820/Y (NAND3X0_LVT)                       0.07 *     0.50 f    0.75
+  I_BLENDER_0/U4799/Y (NAND3X0_LVT)                       0.09 *     0.59 r    0.75
+  I_BLENDER_0/U870/Y (NAND2X0_LVT)                        0.06 *     0.65 f    0.75
+  I_BLENDER_0/U524/Y (NAND2X4_LVT)                        0.17 *     0.81 r    0.75
+  I_BLENDER_0/U572/Y (INVX8_LVT)                          0.03 *     0.84 f    0.75
+  I_BLENDER_0/U2720/Y (AND2X1_LVT)                        0.09 *     0.93 f    0.75
+  I_BLENDER_0/U2727/Y (INVX2_LVT)                         0.05 *     0.98 r    0.75
+  I_BLENDER_0/U6674/Y (NAND3X0_LVT)                       0.09 *     1.06 f    0.75
+  I_BLENDER_0/U6672/Y (AND3X1_LVT)                        0.19 *     1.25 f    0.75
+  I_BLENDER_0/U3882/Y (INVX4_LVT)                         0.07 *     1.32 r    0.75
+  I_BLENDER_0/U1623/Y (XOR2X2_LVT)                        0.24 *     1.56 f    0.75
+  I_BLENDER_0/mult_x_27/U643/Y (NOR2X4_LVT)               0.18 *     1.74 r    0.75
+  I_BLENDER_0/mult_x_27/U479/CO (FADDX1_LVT)              0.15 *     1.90 r    0.75
+  I_BLENDER_0/mult_x_27/U467/CO (FADDX2_LVT)              0.16 *     2.05 r    0.75
+  I_BLENDER_0/mult_x_27/U455/CO (FADDX1_LVT)              0.17 *     2.23 r    0.75
+  I_BLENDER_0/U6458/Y (OR2X1_LVT)                         0.09 *     2.31 r    0.75
+  I_BLENDER_0/U6457/Y (AO22X1_LVT)                        0.12 *     2.44 r    0.75
+  I_BLENDER_0/U6302/Y (XOR3X2_LVT)                        0.27 *     2.71 f    0.75
+  I_BLENDER_0/U663/Y (XOR3X2_LVT)                         0.16 *     2.87 r    0.75
+  I_BLENDER_0/U593/Y (AND2X1_LVT)                         0.11 *     2.98 r    0.75
+  I_BLENDER_0/U598/Y (INVX2_LVT)                          0.04 *     3.02 f    0.75
+  I_BLENDER_0/U885/Y (NAND3X0_LVT)                        0.08 *     3.09 r    0.75
+  I_BLENDER_0/U3767/Y (AO22X1_LVT)                        0.12 *     3.21 r    0.75
+  I_BLENDER_0/U2788/Y (INVX2_LVT)                         0.05 *     3.26 f    0.75
+  I_BLENDER_0/U6599/Y (NAND3X0_LVT)                       0.07 *     3.33 r    0.75
+  I_BLENDER_0/U3765/Y (NAND3X0_LVT)                       0.09 *     3.42 f    0.75
+  I_BLENDER_0/U6304/Y (NAND2X4_LVT)                       0.20 *     3.62 r    0.75
+  I_BLENDER_0/U1773/Y (NAND2X0_LVT)                       0.05 *     3.67 f    0.75
+  I_BLENDER_0/U1781/Y (NAND3X0_LVT)                       0.08 *     3.75 r    0.75
+  I_BLENDER_0/U6881/Y (NAND4X0_LVT)                       0.08 *     3.83 f    0.75
+  I_BLENDER_0/s4_op2_reg[26]/D (SDFFX1_HVT)               0.00 *     3.83 f    0.75
+  data arrival time                                                  3.83      
+
+  clock SYS_CLK (rise edge)                               4.80       4.80      
+  clock network delay (ideal)                             0.00       4.80      
+  clock uncertainty                                      -0.10       4.70      
+  I_BLENDER_0/s4_op2_reg[26]/CLK (SDFFX1_HVT)             0.00       4.70 r    
+  library setup time                                     -1.20       3.50      
+  data required time                                                 3.50      
+  ------------------------------------------------------------------------------------
+  data required time                                                 3.50      
+  data arrival time                                                 -3.83      
+  ------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.32      
+
+
+  Startpoint: I_RISC_CORE/I_INSTRN_LAT/Crnt_Instrn_2_reg[28]
+              (rising edge-triggered flip-flop clocked by ate_clk)
+  Endpoint: I_SDRAM_TOP/I_SDRAM_IF/mega_shift_1_reg[38][29]
+            (falling edge-triggered flip-flop clocked by ate_clk)
+  Scenario: test_worst
+  Path Group: ate_clk
+  Path Type: max
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock ate_clk (rise edge)                               0.00       0.00      
+  clock network delay (ideal)                             0.00       0.00      
+  I_RISC_CORE/I_INSTRN_LAT/Crnt_Instrn_2_reg[28]/CLK (SDFFARX1_HVT)
+                                                          0.00       0.00 r    0.75
+  I_RISC_CORE/I_INSTRN_LAT/Crnt_Instrn_2_reg[28]/Q (SDFFARX1_HVT)
+                                                          1.24       1.24 f    0.75
+  I_RISC_CORE/U816/Y (NBUFFX4_LVT)                        0.23 *     1.47 f    0.75
+  I_RISC_CORE/U462/Y (INVX0_LVT)                          0.17 *     1.65 r    0.75
+  I_RISC_CORE/U472/Y (AND2X1_LVT)                         0.14 *     1.79 r    0.75
+  I_RISC_CORE/U473/Y (NAND3X0_LVT)                        0.10 *     1.89 f    0.75
+  I_RISC_CORE/U665/Y (OR2X1_HVT)                          0.49 *     2.38 f    0.75
+  I_RISC_CORE/U474/Y (AND2X1_LVT)                         0.22 *     2.59 f    0.75
+  I_RISC_CORE/U226/Y (AO21X1_LVT)                         0.14 *     2.73 f    0.75
+  I_RISC_CORE/U413/Y (NBUFFX2_LVT)                        0.14 *     2.87 f    0.75
+  I_RISC_CORE/PSW[1] (RISC_CORE)                          0.00       2.87 f    
+  PSW[1]_UPF_LS/Y (LSDNSSX8_LVT)                          0.18 *     3.05 f    0.75
+  I_SDRAM_TOP/risc_PSW[1] (SDRAM_TOP)                     0.00       3.05 f    
+  I_SDRAM_TOP/I_SDRAM_IF/risc_PSW[1] (SDRAM_IF)           0.00       3.05 f    
+  I_SDRAM_TOP/I_SDRAM_IF/U4746/Y (AND2X2_LVT)             0.23 *     3.28 f    0.75
+  I_SDRAM_TOP/I_SDRAM_IF/U3868/Y (NBUFFX32_LVT)           0.18 *     3.46 f    0.75
+  I_SDRAM_TOP/I_SDRAM_IF/U3902/Y (NBUFFX8_HVT)            0.39 *     3.85 f    0.75
+  I_SDRAM_TOP/I_SDRAM_IF/U12194/Y (AO22X1_HVT)            0.75 *     4.60 f    0.75
+  I_SDRAM_TOP/I_SDRAM_IF/U12195/Y (OR2X1_HVT)             0.54 *     5.14 f    0.75
+  I_SDRAM_TOP/I_SDRAM_IF/U12199/Y (OA22X1_HVT)            0.73 *     5.87 f    0.75
+  I_SDRAM_TOP/I_SDRAM_IF/U12200/Y (AND2X1_HVT)            0.48 *     6.35 f    0.75
+  I_SDRAM_TOP/I_SDRAM_IF/U2632/Y (MUX21X1_LVT)            0.30 *     6.65 f    0.75
+  I_SDRAM_TOP/I_SDRAM_IF/mega_shift_1_reg[38][29]/D (SDFFNARX1_HVT)
+                                                          0.00 *     6.65 f    0.75
+  data arrival time                                                  6.65      
+
+  clock ate_clk (fall edge)                              15.00      15.00      
+  clock network delay (ideal)                             0.00      15.00      
+  clock uncertainty                                      -0.20      14.80      
+  I_SDRAM_TOP/I_SDRAM_IF/mega_shift_1_reg[38][29]/CLK (SDFFNARX1_HVT)
+                                                          0.00      14.80 f    
+  library setup time                                     -1.44      13.36      
+  data required time                                                13.36      
+  ------------------------------------------------------------------------------------
+  data required time                                                13.36      
+  data arrival time                                                 -6.65      
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                        6.70      
+
+
+1
